@@ -1,0 +1,48 @@
+_______________________________________________
+This program performs various tests on 
+property_server, cartesian_geometry, grid, cartesian_grid,...
+
+_______________________________________________
+   Testing property server: 
+
+properties: 
+poro
+perm
+ntg
+tmp
+
+deleting tmp
+
+new properties: 
+poro
+perm
+ntg
+
+poro at 2: 0.2
+perm at 2: 10
+ntg at 2: 0.5
+tmp exists? 0
+
+changing poro at 2: 
+new poro at 2: 55
+
+changing again: 
+new poro at 2: 99
+
+seismic at 2: 21
+
+
+___________________________________________________________
+  Testing cartesian geometry
+
+Converting (1,2,0) in real space coordinates: (4.7 , 13.5 , 0)
+
+index corresponding to (1,2,0) : 13
+
+index corresponding to (4.7 , 13.5 , 0) : 6
+
+
+___________________________________________________________
+  Testing grid
+
+value at (1 , 2 , 0) : 

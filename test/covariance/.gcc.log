@@ -1,0 +1,96 @@
+benchmark.cpp:1:10: fatal error: 'GsTL/geometry/covariance_table_2.h' file not found
+#include <GsTL/geometry/covariance_table_2.h>
+         ^
+1 error generated.
+
+test_covariance.cpp:1:10: fatal error: 'GsTL/geometry/covariance.h' file not found
+#include <GsTL/geometry/covariance.h>
+         ^
+1 error generated.
+
+test_covariance2.cpp:1:10: fatal error: 'GsTL/geometry/covariance.h' file not found
+#include <GsTL/geometry/covariance.h>
+         ^
+1 error generated.
+
+test_covariance_set.cpp:1:10: fatal error: 'GsTL/kriging/LMC_covariance.h' file not found
+#include <GsTL/kriging/LMC_covariance.h>
+         ^
+1 error generated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

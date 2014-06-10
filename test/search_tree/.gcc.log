@@ -1,0 +1,2210 @@
+benchmark1.cc:12:10: fatal error: 'GsTL/cdf_estimator/pool_allocator.h' file not found
+#include <GsTL/cdf_estimator/pool_allocator.h>
+         ^
+1 error generated.
+
+benchmark2.cc:12:10: fatal error: 'GsTL/cdf_estimator/pool_allocator.h' file not found
+#include <GsTL/cdf_estimator/pool_allocator.h>
+         ^
+1 error generated.
+
+test_search_tree.cc:1:10: fatal error: 'GsTL/grid/cartesian_grid.h' file not found
+#include <GsTL/grid/cartesian_grid.h>
+         ^
+1 error generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-89c02a.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-89c02a.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-89c02a.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-89c02a.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-89c02a.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-89c02a.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-89c02a.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::vector<tree_node<int, pool_allocator<int> >*, std::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-89c02a.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-89c02a.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-89c02a.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::vector<tree_node<int, pool_allocator<int> >*, std::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-89c02a.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-89c02a.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-6f3537.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-6f3537.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-6f3537.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-6f3537.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-6f3537.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-6f3537.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-6f3537.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-6f3537.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-6f3537.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e6b834.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e6b834.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-e6b834.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-e6b834.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e6b834.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-e6b834.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-e6b834.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-e6b834.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e6b834.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-e6b834.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-e6b834.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-e6b834.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6c8e0.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6c8e0.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c6c8e0.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6c8e0.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c6c8e0.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6c8e0.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c6c8e0.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c6c8e0.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-c6c8e0.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-23db73.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-23db73.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-23db73.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-23db73.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-23db73.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-23db73.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-23db73.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-23db73.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-23db73.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-23db73.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-23db73.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-23db73.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-77264c.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-77264c.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-77264c.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-77264c.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-77264c.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-77264c.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-77264c.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-77264c.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-77264c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-8ecf5b.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-8ecf5b.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-8ecf5b.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-8ecf5b.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-8ecf5b.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-8ecf5b.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-8ecf5b.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-8ecf5b.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-8ecf5b.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-8ecf5b.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-8ecf5b.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-8ecf5b.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5f9a76.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5f9a76.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-5f9a76.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5f9a76.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-5f9a76.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5f9a76.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-5f9a76.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-5f9a76.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-5f9a76.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e60730.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e60730.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-e60730.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-e60730.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e60730.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-e60730.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-e60730.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-e60730.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-e60730.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-e60730.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-e60730.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-e60730.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-a9ed89.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-a9ed89.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-a9ed89.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-a9ed89.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-a9ed89.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-a9ed89.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-a9ed89.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-a9ed89.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-a9ed89.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-49af2d.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-49af2d.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-49af2d.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-49af2d.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-49af2d.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-49af2d.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-49af2d.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-49af2d.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-49af2d.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-49af2d.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-49af2d.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-49af2d.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5e763f.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5e763f.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-5e763f.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5e763f.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-5e763f.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-5e763f.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-5e763f.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-5e763f.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-5e763f.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c1db9e.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c1db9e.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-c1db9e.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-c1db9e.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c1db9e.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-c1db9e.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-c1db9e.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-c1db9e.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c1db9e.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-c1db9e.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-c1db9e.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-c1db9e.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-f5328f.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-f5328f.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-f5328f.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-f5328f.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-f5328f.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-f5328f.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-f5328f.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-f5328f.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-f5328f.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:245:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-5bfe83.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-5bfe83.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-5bfe83.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-5bfe83.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-5bfe83.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-5bfe83.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-5bfe83.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-5bfe83.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-5bfe83.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-5bfe83.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-5bfe83.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-5bfe83.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c10769.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c10769.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c10769.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c10769.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c10769.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c10769.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c10769.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c10769.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-c10769.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:204:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:204:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:205:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:205:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:205:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:212:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:213:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:213:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.h:213:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:246:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.h:246:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a7752c.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a7752c.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-a7752c.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-a7752c.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a7752c.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-a7752c.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-a7752c.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-a7752c.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a7752c.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-a7752c.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-a7752c.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-a7752c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6e2f2.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6e2f2.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c6e2f2.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6e2f2.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c6e2f2.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c6e2f2.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c6e2f2.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c6e2f2.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-c6e2f2.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:56:3: error: use of undeclared identifier 'g_'
+  g_.index() = index_;
+  ^
+../../GsTL/grid/grid_iterators.cc:56:16: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = index_;
+               ^~~~~~
+               index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:76:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.cc:76:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.cc:76:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:100:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.cc:100:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.cc:100:49: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->near_data_path_node_index(index_);
+                                                ^~~~~~
+                                                index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:84:
+../../GsTL/grid/cartesian_grid.cc:40:3: error: use of undeclared identifier 'set_geometry'
+  set_geometry(&cartesian_geom_server_);
+  ^
+  this->
+test_search_tree.cc:49:17: note: in instantiation of member function 'cartesian_grid<property_server<short> >::cartesian_grid' requested here
+  CartesianGrid grid(5,5);
+                ^
+../../GsTL/grid/grid.h:108:8: note: must qualify identifier to find this declaration in dependent base class
+  void set_geometry(GeometryServer* gserver);
+       ^
+1 warning and 16 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c027ee.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c027ee.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-c027ee.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-c027ee.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c027ee.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-c027ee.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-c027ee.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-c027ee.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-c027ee.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-c027ee.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-c027ee.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-c027ee.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-06f92a.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-06f92a.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-06f92a.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-06f92a.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-06f92a.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-06f92a.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-06f92a.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-06f92a.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-06f92a.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:56:3: error: use of undeclared identifier 'g_'
+  g_.index() = index_;
+  ^
+../../GsTL/grid/grid_iterators.cc:56:16: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = index_;
+               ^~~~~~
+               index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:76:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.cc:76:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.cc:76:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:100:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.cc:100:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.cc:100:49: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->near_data_path_node_index(index_);
+                                                ^~~~~~
+                                                index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:84:
+../../GsTL/grid/cartesian_grid.cc:40:3: error: use of undeclared identifier 'set_geometry'
+  set_geometry(&cartesian_geom_server_);
+  ^
+  this->
+test_search_tree.cc:49:17: note: in instantiation of member function 'cartesian_grid<property_server<short> >::cartesian_grid' requested here
+  CartesianGrid grid(5,5);
+                ^
+../../GsTL/grid/grid.h:108:8: note: must qualify identifier to find this declaration in dependent base class
+  void set_geometry(GeometryServer* gserver);
+       ^
+1 warning and 16 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-97df6c.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-97df6c.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-97df6c.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-97df6c.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-97df6c.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-97df6c.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-97df6c.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-97df6c.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-97df6c.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-97df6c.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-97df6c.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-97df6c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-81e179.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-81e179.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-81e179.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-81e179.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-81e179.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-81e179.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-81e179.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-81e179.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-81e179.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:56:3: error: use of undeclared identifier 'g_'
+  g_.index() = index_;
+  ^
+../../GsTL/grid/grid_iterators.cc:56:16: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = index_;
+               ^~~~~~
+               index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:76:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->random_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.cc:76:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->random_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.cc:76:46: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->random_path_node_index(index_);
+                                             ^~~~~~
+                                             index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+In file included from ../../GsTL/grid/grid_iterators.h:261:
+../../GsTL/grid/grid_iterators.cc:100:3: error: use of undeclared identifier 'g_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+  ^
+../../GsTL/grid/grid_iterators.cc:100:16: error: use of undeclared identifier 'grid_'
+  g_.index() = grid_->near_data_path_node_index(index_);
+               ^
+../../GsTL/grid/grid_iterators.cc:100:49: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  g_.index() = grid_->near_data_path_node_index(index_);
+                                                ^~~~~~
+                                                index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning and 15 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1c82be.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1c82be.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-1c82be.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-1c82be.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1c82be.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-1c82be.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-1c82be.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-1c82be.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1c82be.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-1c82be.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-1c82be.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-1c82be.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-fa02be.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-fa02be.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-fa02be.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-fa02be.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-fa02be.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-fa02be.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-fa02be.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-fa02be.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-fa02be.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_ ++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:166:10: error: cannot increment value of type 'char *(const char *, int)'
+  index_ ++;
+  ~~~~~~ ^
+../../GsTL/grid/grid_iterators.h:167:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+../../GsTL/grid/grid_iterators.h:174:3: error: use of undeclared identifier 'index_'; did you mean 'index'?
+  index_++;
+  ^~~~~~
+  index
+/usr/include/strings.h:77:7: note: 'index' declared here
+char    *index(const char *, int) __POSIX_C_DEPRECATED(200112L);
+         ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:38:
+../../GsTL/grid/grid_iterators.h:174:9: error: cannot increment value of type 'char *(const char *, int)'
+  index_++;
+  ~~~~~~^
+../../GsTL/grid/grid_iterators.h:175:3: error: use of undeclared identifier 'g_'
+  g_.index() ++;
+  ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning and 7 errors generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-f01fe5.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-f01fe5.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-f01fe5.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-f01fe5.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-f01fe5.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-f01fe5.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-f01fe5.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-f01fe5.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-f01fe5.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-f01fe5.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-f01fe5.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-f01fe5.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-cfe021.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-cfe021.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-cfe021.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-cfe021.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-cfe021.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-cfe021.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-cfe021.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-cfe021.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-cfe021.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:37:
+In file included from ../../GsTL/grid/flag_server.h:36:
+In file included from ../../GsTL/grid/property_server.h:252:
+../../GsTL/grid/property_server.cc:34:61: error: use of undeclared identifier 'nb_of_nodes'; did you mean 'nb_of_nodes_'?
+    property_array_type* property = new property_array_type(nb_of_nodes);
+                                                            ^~~~~~~~~~~
+                                                            nb_of_nodes_
+../../GsTL/grid/property_server.h:118:7: note: 'nb_of_nodes_' declared here
+  int nb_of_nodes_;
+      ^
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning and 1 error generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1a6d5e.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1a6d5e.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-1a6d5e.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-1a6d5e.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1a6d5e.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-1a6d5e.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-1a6d5e.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-1a6d5e.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-1a6d5e.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-1a6d5e.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-1a6d5e.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-1a6d5e.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-838edb.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-838edb.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-838edb.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-838edb.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-838edb.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-838edb.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-838edb.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-838edb.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-838edb.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-628077.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-628077.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-628077.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-628077.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-628077.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-628077.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-628077.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-628077.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-628077.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-628077.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-628077.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-628077.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7af41d.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7af41d.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-7af41d.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7af41d.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-7af41d.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7af41d.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-7af41d.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-7af41d.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-7af41d.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a9c4ff.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a9c4ff.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-a9c4ff.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-a9c4ff.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a9c4ff.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-a9c4ff.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-a9c4ff.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-a9c4ff.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-a9c4ff.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-a9c4ff.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-a9c4ff.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-a9c4ff.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7ccc0e.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7ccc0e.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-7ccc0e.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7ccc0e.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-7ccc0e.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-7ccc0e.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-7ccc0e.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-7ccc0e.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-7ccc0e.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-ff0375.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-ff0375.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-ff0375.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-ff0375.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-ff0375.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-ff0375.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-ff0375.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-ff0375.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-ff0375.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-ff0375.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-ff0375.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-ff0375.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c88013.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c88013.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c88013.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c88013.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c88013.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-c88013.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-c88013.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-c88013.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-c88013.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning generated.
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-6b6b55.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-6b6b55.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      _main in benchmark1-6b6b55.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-6b6b55.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-6b6b55.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-6b6b55.o
+  "geovalue::is_informed() const", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark1-6b6b55.o
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-6b6b55.o
+      search_tree<int, pool_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark1-6b6b55.o
+      void search_tree<int, pool_allocator<int> >::update<neighborhood>(tree_node<int, pool_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark1-6b6b55.o
+  "geovalue::property_value() const", referenced from:
+      void search_tree<int, pool_allocator<int> >::get_all_pdfs<neighborhood>(std::__1::vector<tree_node<int, pool_allocator<int> >*, std::__1::allocator<tree_node<int, pool_allocator<int> >*> >&, tree_node<int, pool_allocator<int> >*, neighborhood&, neighborhood::const_iterator) in benchmark1-6b6b55.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark1-6b6b55.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Undefined symbols for architecture x86_64:
+  "cartesian_grid::iterator::operator*()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-47f989.o
+  "cartesian_grid::iterator::operator->()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-47f989.o
+  "cartesian_grid::operator()(int, int)", referenced from:
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-47f989.o
+  "geovalue::property_value()", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-47f989.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-47f989.o
+  "geovalue::is_informed() const", referenced from:
+      search_tree<int, standard_allocator<int> >::search_tree<neighborhood, cartesian_grid::iterator>(cartesian_grid::iterator, cartesian_grid::iterator, neighborhood&, int, unsigned int, int) in benchmark2-47f989.o
+      void search_tree<int, standard_allocator<int> >::update<neighborhood>(tree_node<int, standard_allocator<int> >*, int, neighborhood&, neighborhood::iterator) in benchmark2-47f989.o
+      neighborhood::find_neighbors(location_2d const&) in benchmark2-47f989.o
+  "geovalue::location() const", referenced from:
+      neighborhood::find_neighbors(geovalue const&) in benchmark2-47f989.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+In file included from test_search_tree.cc:1:
+In file included from ../../GsTL/grid/cartesian_grid.h:36:
+In file included from ../../GsTL/grid/grid.h:40:
+In file included from ../../GsTL/math/random_number_generators.h:33:
+In file included from ../../boost/random/mersenne_twister.hpp:27:
+In file included from ../../boost/config.hpp:35:
+../../boost/config/compiler/gcc.hpp:66:7: warning: "Unknown compiler version - please run the configure tests and report the results" [-W#warnings]
+#     warning "Unknown compiler version - please run the configure tests and report the results"
+      ^
+1 warning generated.
+

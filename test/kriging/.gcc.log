@@ -1,0 +1,2365 @@
+benchmark_lib.cpp:7:10: fatal error: 'GsTL/kriging/kriging_weights.h' file not found
+#include <GsTL/kriging/kriging_weights.h>
+         ^
+1 error generated.
+
+test_gauss_cdf_estimator.cpp:1:10: fatal error: 'GsTL/kriging/kriging_weights.h' file not found
+#include <GsTL/kriging/kriging_weights.h>
+         ^
+1 error generated.
+
+test_indicator_kriging.cpp:1:10: fatal error: 'GsTL/kriging/SK_constraints.h' file not found
+#include <GsTL/kriging/SK_constraints.h>
+         ^
+1 error generated.
+
+test_kriging.cpp:1:10: fatal error: 'GsTL/kriging/kriging_weights.h' file not found
+#include <GsTL/kriging/kriging_weights.h>
+         ^
+1 error generated.
+
+test_median_ik.cpp:1:10: fatal error: 'GsTL/kriging/SK_constraints.h' file not found
+#include <GsTL/kriging/SK_constraints.h>
+         ^
+1 error generated.
+
+In file included from benchmark_lib.cpp:7:
+In file included from ../../GsTL/kriging/kriging_weights.h:49:
+In file included from ../../GsTL/matrix_library/matrix_lib_traits.h:46:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:49:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+    return GSTL_TNT::gauss_solver(A,b,solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:177:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::gauss_solve<double *>' requested here
+    return GSTL_TNT_lib::gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:52:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::solve<double *>' requested here
+    return matrix_lib_traits<MatrixLibrary>::solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/kriging_weights.h:173:37: note: in instantiation of function template specialization 'kriging_constraints_traits<OK_constraints, GSTL_TNT_lib>::kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+                                 >::kriging_solver(A, b, weights.begin());
+                                    ^
+benchmark_lib.cpp:213:5: note: in instantiation of function template specialization 'kriging_weights<GSTL_TNT_lib, Point, neighborhood, covariance, OK_constraints, TNT::Vector<double> >' requested here
+    kriging_weights<GSTL_TNT_lib>(SK_weights,
+    ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+1 error generated.
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = __gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+In file included from test_indicator_kriging.cpp:5:
+In file included from ../../GsTL/cdf_estimator/indicator_cdf_estimator.h:39:
+In file included from ../../GsTL/kriging.h:4:
+In file included from ../../GsTL/kriging/kriging_weights.h:49:
+In file included from ../../GsTL/matrix_library/matrix_lib_traits.h:46:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:49:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, __gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+    return GSTL_TNT::gauss_solver(A,b,solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:158:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::gauss_solve<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+    return GSTL_TNT_lib::gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:77:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::cholesky_solve<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+    return matrix_lib_traits<MatrixLibrary>::cholesky_solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/kriging_weights.h:173:37: note: in instantiation of function template specialization 'kriging_constraints_traits<SK_constraints, GSTL_TNT_lib>::kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, __gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+                                 >::kriging_solver(A, b, weights.begin());
+                                    ^
+../../GsTL/cdf_estimator/indicator_cdf_estimator.h:324:8: note: in instantiation of function template specialization 'kriging_weights<GSTL_TNT_lib, Point, neighborhood, const covariance, SK_constraints, std::vector<double, std::allocator<double> > >' requested here
+        kriging_weights<MatrixLibrary>( weights_,
+        ^
+test_indicator_kriging.cpp:169:22: note: in instantiation of function template specialization 'Indicator_cdf_estimator<covariance *, Indicator_function<double>, GSTL_TNT_lib>::operator()<Node, neighborhood *, Non_param_cdf<Tail_interpolator, Linear_interpol, Tail_interpolator> >' requested here
+  indicator_estimator(center, &voisin, &voisin+1, ccdf);
+                     ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+1 error generated.
+
+In file included from test_kriging.cpp:1:
+In file included from ../../GsTL/kriging/kriging_weights.h:49:
+In file included from ../../GsTL/matrix_library/matrix_lib_traits.h:46:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:62:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+    return GSTL_TNT::gauss_solver(A, b_copy, solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:168:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::const_gauss_solve<double *>' requested here
+    return GSTL_TNT_lib::const_gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:83:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::const_cholesky_solve<double *>' requested here
+    return matrix_lib_traits<MatrixLibrary>::const_cholesky_solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/kriging_weights.h:112:39: note: in instantiation of function template specialization 'kriging_constraints_traits<SK_constraints, GSTL_TNT_lib>::const_kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+                                   >::const_kriging_solver(A, b, weights.begin());
+                                      ^
+test_kriging.cpp:221:16: note: in instantiation of function template specialization 'kriging_weights<GSTL_TNT_lib, Point, neighborhood, covariance, SK_constraints, TNT::Vector<double> >' requested here
+  int status = kriging_weights<GSTL_TNT_lib>(SK_weights, sk_variance,
+               ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+3 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<__gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > >, Point, std::vector<double, std::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<__gnu_cxx::__normal_iterator<CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > > *, std::vector<CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > >, std::allocator<CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > > > > >, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:367:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:389:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: note: in instantiation of function template specialization 'is_valid_cdf<double *>' requested here
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<__gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > >, Point, std::vector<double, std::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<__gnu_cxx::__normal_iterator<CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > > *, std::vector<CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > >, std::allocator<CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > > > > >, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+In file included from test_median_ik.cpp:5:
+In file included from ../../GsTL/kriging/cokriging_constraints.h:7:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:49:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, __gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+    return GSTL_TNT::gauss_solver(A,b,solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:177:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::gauss_solve<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+    return GSTL_TNT_lib::gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:52:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::solve<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+    return matrix_lib_traits<MatrixLibrary>::solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/cokriging_weights.h:186:39: note: in instantiation of function template specialization 'kriging_constraints_traits<const CoKriging_constraints<__gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > >, Point, std::vector<double, std::allocator<double> >, GSTL_TNT_lib>, GSTL_TNT_lib>::kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, __gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+                                   >::kriging_solver( A, b, weights.begin() );
+                                      ^
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:81:7: note: in instantiation of function template specialization 'cokriging_weights<GSTL_TNT_lib, Point, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > >, const My_covariance_set, const CoKriging_constraints<__gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > >, Point, std::vector<double, std::allocator<double> >, GSTL_TNT_lib>, std::vector<double, std::allocator<double> > >' requested here
+      cokriging_weights<MatrixLibrary>( weights_, 
+      ^
+test_median_ik.cpp:187:22: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<__gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > >, Point, std::vector<double, std::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > > >, My_covariance_set, GSTL_TNT_lib>::operator()<Node, __gnu_cxx::__normal_iterator<neighborhood *, std::vector<neighborhood, std::allocator<neighborhood> > >, Non_param_cdf<Tail_interpolator, Linear_interpol, Tail_interpolator> >' requested here
+  indicator_estimator(center, neighbors.begin(), neighbors.end(), ccdf);
+                     ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+4 errors generated.
+
+In file included from benchmark_lib.cpp:7:
+In file included from ../../GsTL/kriging/kriging_weights.h:49:
+In file included from ../../GsTL/matrix_library/matrix_lib_traits.h:46:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:49:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+    return GSTL_TNT::gauss_solver(A,b,solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:177:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::gauss_solve<double *>' requested here
+    return GSTL_TNT_lib::gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:52:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::solve<double *>' requested here
+    return matrix_lib_traits<MatrixLibrary>::solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/kriging_weights.h:173:37: note: in instantiation of function template specialization 'kriging_constraints_traits<OK_constraints, GSTL_TNT_lib>::kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+                                 >::kriging_solver(A, b, weights.begin());
+                                    ^
+benchmark_lib.cpp:213:5: note: in instantiation of function template specialization 'kriging_weights<GSTL_TNT_lib, Point, neighborhood, covariance, OK_constraints, TNT::Vector<double> >' requested here
+    kriging_weights<GSTL_TNT_lib>(SK_weights,
+    ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+1 error generated.
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+In file included from test_indicator_kriging.cpp:5:
+In file included from ../../GsTL/cdf_estimator/indicator_cdf_estimator.h:39:
+In file included from ../../GsTL/kriging.h:4:
+In file included from ../../GsTL/kriging/kriging_weights.h:49:
+In file included from ../../GsTL/matrix_library/matrix_lib_traits.h:46:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:49:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, std::__1::__wrap_iter<double *> >' requested here
+    return GSTL_TNT::gauss_solver(A,b,solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:158:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::gauss_solve<std::__1::__wrap_iter<double *> >' requested here
+    return GSTL_TNT_lib::gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:77:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::cholesky_solve<std::__1::__wrap_iter<double *> >' requested here
+    return matrix_lib_traits<MatrixLibrary>::cholesky_solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/kriging_weights.h:173:37: note: in instantiation of function template specialization 'kriging_constraints_traits<SK_constraints, GSTL_TNT_lib>::kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, std::__1::__wrap_iter<double *> >' requested here
+                                 >::kriging_solver(A, b, weights.begin());
+                                    ^
+../../GsTL/cdf_estimator/indicator_cdf_estimator.h:324:8: note: in instantiation of function template specialization 'kriging_weights<GSTL_TNT_lib, Point, neighborhood, const covariance, SK_constraints, std::__1::vector<double, std::__1::allocator<double> > >' requested here
+        kriging_weights<MatrixLibrary>( weights_,
+        ^
+test_indicator_kriging.cpp:169:22: note: in instantiation of function template specialization 'Indicator_cdf_estimator<covariance *, Indicator_function<double>, GSTL_TNT_lib>::operator()<Node, neighborhood *, Non_param_cdf<Tail_interpolator, Linear_interpol, Tail_interpolator> >' requested here
+  indicator_estimator(center, &voisin, &voisin+1, ccdf);
+                     ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+1 error generated.
+
+In file included from test_kriging.cpp:1:
+In file included from ../../GsTL/kriging/kriging_weights.h:49:
+In file included from ../../GsTL/matrix_library/matrix_lib_traits.h:46:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:62:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+    return GSTL_TNT::gauss_solver(A, b_copy, solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:168:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::const_gauss_solve<double *>' requested here
+    return GSTL_TNT_lib::const_gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:83:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::const_cholesky_solve<double *>' requested here
+    return matrix_lib_traits<MatrixLibrary>::const_cholesky_solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/kriging_weights.h:112:39: note: in instantiation of function template specialization 'kriging_constraints_traits<SK_constraints, GSTL_TNT_lib>::const_kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, double *>' requested here
+                                   >::const_kriging_solver(A, b, weights.begin());
+                                      ^
+test_kriging.cpp:221:16: note: in instantiation of function template specialization 'kriging_weights<GSTL_TNT_lib, Point, neighborhood, covariance, SK_constraints, TNT::Vector<double> >' requested here
+  int status = kriging_weights<GSTL_TNT_lib>(SK_weights, sk_variance,
+               ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+3 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:367:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:389:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: note: in instantiation of function template specialization 'is_valid_cdf<double *>' requested here
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+In file included from test_median_ik.cpp:5:
+In file included from ../../GsTL/kriging/cokriging_constraints.h:7:
+In file included from ../../GsTL/matrix_library/gstl_tnt_lib.h:6:
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:59:10: error: call to function 'fortran_gauss_solver' that is neither visible in the template definition nor found by argument-dependent lookup
+  return fortran_gauss_solver(b.size(), A.raw_access(), b.raw_access(), solution);
+         ^
+../../GsTL/matrix_library/gstl_tnt_lib.h:49:22: note: in instantiation of function template specialization 'GSTL_TNT::gauss_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, std::__1::__wrap_iter<double *> >' requested here
+    return GSTL_TNT::gauss_solver(A,b,solution);
+                     ^
+../../GsTL/matrix_library/matrix_lib_traits.h:177:26: note: in instantiation of function template specialization 'GSTL_TNT_lib::gauss_solve<std::__1::__wrap_iter<double *> >' requested here
+    return GSTL_TNT_lib::gauss_solve(A,b,solution);
+                         ^
+../../GsTL/kriging/kriging_constraints_traits.h:52:46: note: in instantiation of function template specialization 'matrix_lib_traits<GSTL_TNT_lib>::solve<std::__1::__wrap_iter<double *> >' requested here
+    return matrix_lib_traits<MatrixLibrary>::solve(A,b,solution);
+                                             ^
+../../GsTL/kriging/cokriging_weights.h:186:39: note: in instantiation of function template specialization 'kriging_constraints_traits<const CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, GSTL_TNT_lib>::kriging_solver<GSTL_TNT::Symmetric_matrix<double>, TNT::Vector<double>, std::__1::__wrap_iter<double *> >' requested here
+                                   >::kriging_solver( A, b, weights.begin() );
+                                      ^
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:81:7: note: in instantiation of function template specialization 'cokriging_weights<GSTL_TNT_lib, Point, std::__1::__wrap_iter<neighborhood *>, const My_covariance_set, const CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, std::__1::vector<double, std::__1::allocator<double> > >' requested here
+      cokriging_weights<MatrixLibrary>( weights_, 
+      ^
+test_median_ik.cpp:187:22: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::operator()<Node, std::__1::__wrap_iter<neighborhood *>, Non_param_cdf<Tail_interpolator, Linear_interpol, Tail_interpolator> >' requested here
+  indicator_estimator(center, neighbors.begin(), neighbors.end(), ccdf);
+                     ^
+../../GsTL/matrix_library/gstl_tnt/gstl_gauss_solver.h:130:5: note: 'fortran_gauss_solver' should be declared prior to the call site
+int fortran_gauss_solver( int neq, double *a, double *r, RandomIterator s ) {
+    ^
+4 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:380:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:402:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:393:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:415:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:417:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:439:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:46:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+    gstl_assert( is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_median_ik.cpp:180:16: note: in instantiation of function template specialization 'MedianIK_cdf_estimator<CoKriging_constraints<std::__1::__wrap_iter<neighborhood *>, Point, std::__1::vector<double, std::__1::allocator<double> >, GSTL_TNT_lib>, CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> >, My_covariance_set, GSTL_TNT_lib>::MedianIK_cdf_estimator<std::__1::__wrap_iter<CoKriging_combiner<std::__1::__wrap_iter<const double *>, std::__1::__wrap_iter<neighborhood *> > *>, double *>' requested here
+  CdfEstimator indicator_estimator( marginal, marginal+5,
+               ^
+../../GsTL/univariate_stats/build_cdf.h:420:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+In file included from test_median_ik.cpp:7:
+../../GsTL/cdf_estimator/median_ik_cdf_estimator.h:48:18: error: call to function 'is_valid_cdf' that is neither visible in the template definition nor found by argument-dependent lookup
+                 is_valid_cdf( marginal_begin, marginal_end, 
+                 ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:442:6: note: 'is_valid_cdf' should be declared prior to the call site or in namespace 'GsTL'
+bool is_valid_cdf( ForwardIterator begin, ForwardIterator end,
+     ^
+2 errors generated.
+
+
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:130:34: error: no type named 'iterator' in 'TNT_lib<double>'
+ typedef typename WeightsVector::iterator Iterator_;
+         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../GsTL/kriging/kriging_constraints.h:167:35: note: in instantiation of template class 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+class SKConstraints_impl : public Kriging_constraints_impl<Neighborhood_,
+                                  ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+In file included from test_gauss_cdf_estimator.cpp:13:
+../../GsTL/kriging/kriging_constraints.h:198:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_begin,
+                                                               ^
+test_gauss_cdf_estimator.cpp:201:33: note: in instantiation of template class 'SKConstraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+                                ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:199:64: error: 'Iterator_' is a protected member of 'Kriging_constraints_impl<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>'
+                                           typename BaseClass::Iterator_ weights_end ) const {
+                                                               ^
+../../GsTL/kriging/kriging_constraints.h:130:43: note: declared protected here
+ typedef typename WeightsVector::iterator Iterator_;
+                                          ^
+../../GsTL/kriging/kriging_constraints.h:42:35: error: no type named 'iterator' in 'TNT_lib<double>'
+  typedef typename WeightsVector::iterator Iterator_;
+          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+test_gauss_cdf_estimator.cpp:201:16: note: in instantiation of template class 'Kriging_constraints<neighborhood, Point, TNT_lib<double>, GSTL_TNT_lib>' requested here
+  KConstraints constraints( new SKConstraints_impl<neighborhood, Point,TNT> );
+               ^
+In file included from test_gauss_cdf_estimator.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<std::__1::__wrap_iter<const double *>, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_gauss_cdf_estimator.cpp:198:30: note: in instantiation of member function 'SK_combiner<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<std::vector<double>::const_iterator,
+                             ^
+In file included from test_gauss_cdf_estimator.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+../../GsTL/kriging/kriging_combiner.h:101:7: note: in instantiation of member function 'Kriging_combiner_impl<std::__1::__wrap_iter<const double *>, neighborhood>::operator()' requested here
+class SK_combiner : public Kriging_combiner_impl<InputIterator,Neighborhood> {
+      ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = std::__1::__wrap_iter<const double *>, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+6 errors generated.
+
+
+In file included from test_kriging.cpp:5:
+../../GsTL/kriging/linear_combination.h:55:26: error: no member named 'value_type' in 'neighborhood'
+  typename Neighborhood::value_type::property_type result(0);
+           ~~~~~~~~~~~~~~^
+../../GsTL/kriging/kriging_combiner.h:112:18: note: in instantiation of function template specialization 'linear_combination<double *, neighborhood>' requested here
+    double val = linear_combination( begin_weights, end_weights, neighbors );
+                 ^
+test_kriging.cpp:295:30: note: in instantiation of member function 'SK_combiner<double *, neighborhood>::operator()' requested here
+  KCombiner sk_combiner( new SK_combiner<TNTvector::iterator, neighborhood>( 9.0 ) );
+                             ^
+In file included from test_kriging.cpp:8:
+In file included from ../../GsTL/cdf_estimator/gaussian_cdf_Kestimator.h:40:
+In file included from ../../GsTL/kriging.h:7:
+../../GsTL/kriging/kriging_combiner.h:30:12: error: no matching function for call to 'linear_combination'
+    return linear_combination( begin_weights, end_weights, neighbors );
+           ^~~~~~~~~~~~~~~~~~
+test_kriging.cpp:296:30: note: in instantiation of member function 'Kriging_combiner_impl<double *, neighborhood>::operator()' requested here
+  KCombiner ok_combiner( new KCombiner_base() );
+                             ^
+../../GsTL/kriging/linear_combination.h:51:1: note: candidate template ignored: substitution failure [with InputIterator = double *, Neighborhood = neighborhood]
+linear_combination(InputIterator begin_weights, InputIterator end_weights,
+^
+2 errors generated.
+
+

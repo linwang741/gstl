@@ -1,0 +1,492 @@
+cdf_algo_test.cpp:1:10: fatal error: 'GsTL/cdf/categ_non_param_cdf.h' file not found
+#include <GsTL/cdf/categ_non_param_cdf.h>
+         ^
+1 error generated.
+
+test_cdf_transform.cpp:1:10: fatal error: 'GsTL/cdf/gaussian_cdf.h' file not found
+#include <GsTL/cdf/gaussian_cdf.h>
+         ^
+1 error generated.
+
+test_non_param_cdf.cpp:1:10: fatal error: 'GsTL/cdf/non_param_cdf.h' file not found
+#include <GsTL/cdf/non_param_cdf.h>
+         ^
+1 error generated.
+
+test_univariate_stat.cpp:1:10: fatal error: 'GsTL/cdf/gaussian_cdf.h' file not found
+#include <GsTL/cdf/gaussian_cdf.h>
+         ^
+1 error generated.
+
+
+
+In file included from test_non_param_cdf.cpp:1:
+In file included from ../../GsTL/cdf/non_param_cdf.h:41:
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/univariate_stats/build_cdf.h:402:10: note: in instantiation of function template specialization 'is_valid_cdf<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > > >' requested here
+  return is_valid_cdf( cdf.p_begin(), cdf.p_end(),
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:144:16: note: in instantiation of function template specialization 'is_valid_cdf<Categ_non_param_cdf<unsigned int> >' requested here
+  gstl_assert( is_valid_cdf( *this ) );
+               ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_non_param_cdf.cpp:65:40: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::prob' requested here
+  std::cout << "prob of Z=2: " << cdf1.prob(2) <<std::endl;
+                                       ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:477:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:479:7: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  if( is_valid_pdf( begin, end ) ) {
+      ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: note: in instantiation of function template specialization 'make_pdf_valid<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+3 errors generated.
+
+In file included from test_univariate_stat.cpp:2:
+In file included from ../../GsTL/cdf/categ_non_param_cdf.h:39:
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/univariate_stats/build_cdf.h:402:10: note: in instantiation of function template specialization 'is_valid_cdf<__gnu_cxx::__normal_iterator<const double *, std::vector<double, std::allocator<double> > > >' requested here
+  return is_valid_cdf( cdf.p_begin(), cdf.p_end(),
+         ^
+test_univariate_stat.cpp:81:37: note: in instantiation of function template specialization 'is_valid_cdf<Categ_non_param_cdf<int> >' requested here
+  std::cout << "Is bad cdf ok? " << is_valid_cdf(bad_cdf) << std::endl;
+                                    ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:477:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:479:7: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  if( is_valid_pdf( begin, end ) ) {
+      ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: note: in instantiation of function template specialization 'make_pdf_valid<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<__gnu_cxx::__normal_iterator<double *, std::vector<double, std::allocator<double> > > >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+3 errors generated.
+
+
+
+In file included from test_non_param_cdf.cpp:1:
+In file included from ../../GsTL/cdf/non_param_cdf.h:41:
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/univariate_stats/build_cdf.h:402:10: note: in instantiation of function template specialization 'is_valid_cdf<std::__1::__wrap_iter<const double *> >' requested here
+  return is_valid_cdf( cdf.p_begin(), cdf.p_end(),
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:144:16: note: in instantiation of function template specialization 'is_valid_cdf<Categ_non_param_cdf<unsigned int> >' requested here
+  gstl_assert( is_valid_cdf( *this ) );
+               ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_non_param_cdf.cpp:65:40: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::prob' requested here
+  std::cout << "prob of Z=2: " << cdf1.prob(2) <<std::endl;
+                                       ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:477:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:479:7: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  if( is_valid_pdf( begin, end ) ) {
+      ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: note: in instantiation of function template specialization 'make_pdf_valid<std::__1::__wrap_iter<double *> >' requested here
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+3 errors generated.
+
+In file included from test_univariate_stat.cpp:2:
+In file included from ../../GsTL/cdf/categ_non_param_cdf.h:39:
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/univariate_stats/build_cdf.h:402:10: note: in instantiation of function template specialization 'is_valid_cdf<std::__1::__wrap_iter<const double *> >' requested here
+  return is_valid_cdf( cdf.p_begin(), cdf.p_end(),
+         ^
+test_univariate_stat.cpp:81:37: note: in instantiation of function template specialization 'is_valid_cdf<Categ_non_param_cdf<int> >' requested here
+  std::cout << "Is bad cdf ok? " << is_valid_cdf(bad_cdf) << std::endl;
+                                    ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:477:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:479:7: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  if( is_valid_pdf( begin, end ) ) {
+      ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: note: in instantiation of function template specialization 'make_pdf_valid<std::__1::__wrap_iter<double *> >' requested here
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+3 errors generated.
+
+
+
+In file included from test_non_param_cdf.cpp:1:
+In file included from ../../GsTL/cdf/non_param_cdf.h:41:
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/univariate_stats/build_cdf.h:402:10: note: in instantiation of function template specialization 'is_valid_cdf<std::__1::__wrap_iter<const double *> >' requested here
+  return is_valid_cdf( cdf.p_begin(), cdf.p_end(),
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:144:16: note: in instantiation of function template specialization 'is_valid_cdf<Categ_non_param_cdf<unsigned int> >' requested here
+  gstl_assert( is_valid_cdf( *this ) );
+               ^
+../../GsTL/utils/gstl_error_messages.h:65:11: note: expanded from macro 'gstl_assert'
+  (assert(expr))
+          ^
+/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+test_non_param_cdf.cpp:65:40: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::prob' requested here
+  std::cout << "prob of Z=2: " << cdf1.prob(2) <<std::endl;
+                                       ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:477:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:479:7: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  if( is_valid_pdf( begin, end ) ) {
+      ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: note: in instantiation of function template specialization 'make_pdf_valid<std::__1::__wrap_iter<double *> >' requested here
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+3 errors generated.
+
+In file included from test_univariate_stat.cpp:2:
+In file included from ../../GsTL/cdf/categ_non_param_cdf.h:39:
+../../GsTL/univariate_stats/build_cdf.h:392:10: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  return is_valid_pdf( begin, end );
+         ^
+../../GsTL/univariate_stats/build_cdf.h:402:10: note: in instantiation of function template specialization 'is_valid_cdf<std::__1::__wrap_iter<const double *> >' requested here
+  return is_valid_cdf( cdf.p_begin(), cdf.p_end(),
+         ^
+test_univariate_stat.cpp:81:37: note: in instantiation of function template specialization 'is_valid_cdf<Categ_non_param_cdf<int> >' requested here
+  std::cout << "Is bad cdf ok? " << is_valid_cdf(bad_cdf) << std::endl;
+                                    ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:477:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+../../GsTL/univariate_stats/build_cdf.h:479:7: error: call to function 'is_valid_pdf' that is neither visible in the template definition nor found by argument-dependent lookup
+  if( is_valid_pdf( begin, end ) ) {
+      ^
+../../GsTL/univariate_stats/build_cdf.h:456:9: note: in instantiation of function template specialization 'make_pdf_valid<std::__1::__wrap_iter<double *> >' requested here
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:466:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:502:6: note: 'is_valid_pdf' should be declared prior to the call site
+bool is_valid_pdf( ForwardIterator begin, ForwardIterator end ) {
+     ^
+3 errors generated.
+
+
+
+In file included from test_non_param_cdf.cpp:1:
+In file included from ../../GsTL/cdf/non_param_cdf.h:41:
+../../GsTL/univariate_stats/build_cdf.h:469:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:479:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:490:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+1 error generated.
+
+In file included from test_univariate_stat.cpp:2:
+In file included from ../../GsTL/cdf/categ_non_param_cdf.h:39:
+../../GsTL/univariate_stats/build_cdf.h:469:9: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+ return make_pdf_valid( begin, end );        
+        ^
+../../GsTL/univariate_stats/build_cdf.h:479:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:490:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+1 error generated.
+
+
+
+In file included from test_non_param_cdf.cpp:1:
+In file included from ../../GsTL/cdf/non_param_cdf.h:41:
+../../GsTL/univariate_stats/build_cdf.h:137:12: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+    return make_pdf_valid( begin, end );
+           ^
+../../GsTL/univariate_stats/build_cdf.h:477:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:488:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+1 error generated.
+
+In file included from test_univariate_stat.cpp:2:
+In file included from ../../GsTL/cdf/categ_non_param_cdf.h:39:
+../../GsTL/univariate_stats/build_cdf.h:137:12: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+    return make_pdf_valid( begin, end );
+           ^
+../../GsTL/univariate_stats/build_cdf.h:477:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:488:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+1 error generated.
+
+
+
+In file included from test_non_param_cdf.cpp:1:
+In file included from ../../GsTL/cdf/non_param_cdf.h:41:
+../../GsTL/univariate_stats/build_cdf.h:137:12: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+    return make_pdf_valid( begin, end );
+           ^
+../../GsTL/univariate_stats/build_cdf.h:501:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+../../GsTL/cdf/categ_non_param_cdf.h:101:38: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<unsigned int> >' requested here
+  virtual bool make_valid() { return make_cdf_valid( *this); } 
+                                     ^
+test_non_param_cdf.cpp:60:25: note: in instantiation of member function 'Categ_non_param_cdf<unsigned int>::make_valid' requested here
+  Categ_non_param_cdf<> cdf1(4);
+                        ^
+../../GsTL/univariate_stats/build_cdf.h:145:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+1 error generated.
+
+In file included from test_univariate_stat.cpp:2:
+In file included from ../../GsTL/cdf/categ_non_param_cdf.h:39:
+../../GsTL/univariate_stats/build_cdf.h:137:12: error: call to function 'make_pdf_valid' that is neither visible in the template definition nor found by argument-dependent lookup
+    return make_pdf_valid( begin, end );
+           ^
+../../GsTL/univariate_stats/build_cdf.h:501:10: note: in instantiation of function template specialization 'make_cdf_valid<std::__1::__wrap_iter<double *> >' requested here
+  return make_cdf_valid( cdf.p_begin(), cdf.p_end(), 
+         ^
+test_univariate_stat.cpp:82:3: note: in instantiation of function template specialization 'make_cdf_valid<Categ_non_param_cdf<int> >' requested here
+  make_cdf_valid(bad_cdf);
+  ^
+../../GsTL/univariate_stats/build_cdf.h:145:6: note: 'make_pdf_valid' should be declared prior to the call site
+bool make_pdf_valid( RandomIterator begin, RandomIterator end ) {
+     ^
+1 error generated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

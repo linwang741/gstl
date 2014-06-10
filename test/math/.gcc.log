@@ -1,0 +1,23 @@
+test_math_functions.cpp:1:10: fatal error: 'GsTL/math/math_functions.h' file not found
+#include <GsTL/math/math_functions.h>
+         ^
+1 error generated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
